@@ -94,15 +94,7 @@ public class ApiCallingAndDatabaseProcessing
 		}	
 		System.out.println("successfully inserted into database");
 	}
-	
-	
-	public static void main(String[] args) throws SQLException, ClassNotFoundException {
-		ApiCallingAndDatabaseProcessing api=new ApiCallingAndDatabaseProcessing();
-		GettingDatabaseConnection db=new GettingDatabaseConnection();
-		
-		Connection ccc=db.createConnection();
-		api.retrievingData(ccc);
-	}
+
 	public Map<Integer,String> retrievingData(Connection con) throws SQLException
 	{
 		PreparedStatement ps=con.prepareStatement(rb.getString("selectquery"));
