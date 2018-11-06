@@ -23,5 +23,7 @@ public class MainClass
 		DatabaseConnectionDaoImpl db=new DatabaseConnectionDaoImpl();
 		db.createTable();
 		db.insertIntoTable(message);
+		
+		bcmp.postReply(key);
 	}
 }
