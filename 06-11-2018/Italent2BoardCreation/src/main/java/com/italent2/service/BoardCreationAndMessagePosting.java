@@ -120,5 +120,22 @@ public class BoardCreationAndMessagePosting
 		msg.setAuthor(author);
 		return msg;
 	}
+	public void postReply(String key) throws ClientProtocolException, IOException
+	{
+		CloseableHttpClient client = HttpClients.createDefault();
+		HttpPost postRequest=new HttpPost(rb.getString("replyurl"));	
+		List<NameValuePair> params = new ArrayList<NameValuePair>();
+		params.add(new BasicNameValuePair("restapi.session_key",key.toString()));
+		params.add(new BasicNameValuePair("restapi.response_format","json"));
+		postRequest.setEntity(new UrlEncodedFormEntity(params));
+		postRequest.addHeader("Authorization","Basic ZGVtbzAxOlN1UHIxKm1aTGk=");
+		HttpResponse response=client.execute(postRequest);
+		int statusCode=response.getStatusLine().getStatusCode();
+		if(statusCode!=200)
+		{
+			throw new RuntimeException("failed with response code"+statusCode);
+		}
+		System.out.println("replied successfully");
+	}
 	
 }
