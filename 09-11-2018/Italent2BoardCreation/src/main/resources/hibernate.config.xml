@@ -20,7 +20,7 @@
 		<property name="hibernate.connection.username">root</property>
 		
 		<!-- password to the local host -->
-		<property name="hibernate.connection.password">Ammulu@543</property>
+		<property name="hibernate.connection.password">********</property>
 		
 		<!-- no of connections -->
 		<property name="connection.pool_size">1</property>
