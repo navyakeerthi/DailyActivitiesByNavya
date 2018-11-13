@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+	<session-factory>
+
+		<!-- enables the sql statements to console  -->
+		<property name="show_sql">true</property>
+		
+		<!-- registering of the mysql driver -->
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		
+		<!-- connecting to the required database in the local host -->
+		<property name="connection.url">jdbc:mysql://localhost/demo</property>
+		
+		<!-- username to the localhost -->
+		<property name="hibernate.connection.username">root</property>
+		
+		<!-- password to the local host -->
+		<property name="hibernate.connection.password">Ammulu@543</property>
+		
+		<!-- no of connections -->
+		<property name="connection.pool_size">1</property>
+		
+		<!-- which database we are using -->
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+		
+		<!-- update operation is done every time we work with database -->
+		<property name="hbm2ddl.auto">update</property>
+
+		<!-- mapping models to configuration file -->
+		<mapping class="com.italent2.model.Users"></mapping>
+		<mapping class="com.italent2.model.Roles"></mapping> 
+		<mapping class="com.italent2.model.Messages"></mapping>
+		<mapping class="com.italent2.model.UserRoles"></mapping>
+		
+	</session-factory>
+
+</hibernate-configuration>
